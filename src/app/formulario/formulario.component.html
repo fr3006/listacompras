@@ -1,0 +1,69 @@
+<div class="container top30">
+  <span>Form inicial</span>
+<form #f="ngForm" (ngSubmit)="guardar(f)" novalidate>
+  <div class="form-group">
+    <label for="exampleInputnombre">nombre</label>
+    <input name="id" ngModel required #first="ngModel" pattern="[A-Za-z]{1,3}">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputapellido">apellido</label>
+    <input  name="apellido" ngModel required #first="ngModel" pattern="[A-Za-z]{1,6}" #apellido="ngModel">   
+  </div>
+  <div *ngIf="!apellido.valid && apellido.touched" >
+    
+  </div>
+  <div>
+
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  
+  <button  class="btn btn-primary btn-inline-block">Submit
+     
+  </button>
+</form>
+
+
+<!--carga de informacio por defecto-->
+<span>carga de informacion por defecto</span> 
+<form #g="ngForm" (ngSubmit)="guardarDefecto(g)" novalidate>
+<div class="form-group">
+  <label for="exampleInputnombre">nombre</label>
+  <input name="id" [ngModel]="usuario.nombre" required #first="ngModel">
+  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+</div>
+<div class="form-group">
+  <label for="exampleInputapellido">apellido</label>
+  <input name="apellido" [ngModel]="usuario.apellido"  #first="ngModel">
+</div>
+<div class="form-group form-check">
+  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+</div>
+<button class="btn btn-primary btn-inline-block">Submit</button>
+</form>
+
+
+
+
+<span>actualizacion de informacion por defecto</span> 
+<form #h="ngForm" (ngSubmit)="guardarDefectocb(h)" novalidate>
+<div class="form-group">
+  <label for="exampleInputnombre">nombre</label>
+  <input name="id" [(ngModel)]="usuario.nombre" required #first="ngModel">
+  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+</div>
+<div class="form-group">
+  <label for="exampleInputapellido">apellido</label>
+  <input name="apellido" [(ngModel)]="usuario.apellido"  #first="ngModel">
+</div>
+<div class="form-group form-check">
+  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+</div>
+<button class="btn btn-primary btn-inline-block">Submit</button>
+</form>
+</div>

@@ -7,7 +7,7 @@ import { ServiciosService } from '../servicios.service';
   selector: 'app-pendientes',
   templateUrl: './pendientes.component.html',
   styleUrls: ['./pendientes.component.css']
-  
+
 })
 export class PendientesComponent implements OnInit {
 
